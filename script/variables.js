@@ -1,3 +1,18 @@
+
+var allCities = []
+
+async function getData() {
+    const requestURL = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/city.json';
+    const request = new Request(requestURL);
+  
+    const response = await fetch(request);
+    const dataCities = await response.json();
+
+    allCities = dataCities.cities
+    console.log(allCities)
+
+}
+
 const resultDiv = document.getElementById("result")
 const listResultDiv = document.getElementById("listResult")
 
@@ -33,3 +48,5 @@ var listResult = [
         delay : 2
     }
 ]
+
+getData()

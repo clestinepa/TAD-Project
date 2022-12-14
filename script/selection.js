@@ -1,5 +1,5 @@
 //remplir list
-for (let city of allCitys) {
+for (let city of allCities) {
     var option = document.createElement('option')
     option.value = city
     option.textContent = city

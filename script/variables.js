@@ -1,4 +1,3 @@
-
 var allCities = []
 var listResult = [{
     dep: "09:00",
@@ -16,13 +15,18 @@ var listResult = [{
 }]
 
 async function getData() {
-    const requestURL = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/city.json';
-    const request = new Request(requestURL);
+    const requestURLCities = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/city.json';
+    const requestCities = new Request(requestURLCities);
+    const responseCities = await fetch(requestCities);
+    const dataCities = await responseCities.json();
 
-    const response = await fetch(request);
-    const dataCities = await response.json();
+    const requestURLFlights = '../static/data/data.json';
+    const requestFlights = new Request(requestURLFlights);
+    const responseFlights = await fetch(requestFlights);
+    const dataFlights = await responseFlights.json();
 
     allCities = dataCities.cities
+    
 
     intializeSelection()
 }

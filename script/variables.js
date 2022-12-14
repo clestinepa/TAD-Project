@@ -13,9 +13,10 @@ var listResult = [{
     nbFlight: "91236338",
     delay: 2
 }]
+var dataFlights
 
 async function getData() {
-    const requestURLCities = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/city.json';
+    const requestURLCities = '../static/data/city.json';
     const requestCities = new Request(requestURLCities);
     const responseCities = await fetch(requestCities);
     const dataCities = await responseCities.json();
@@ -23,10 +24,9 @@ async function getData() {
     const requestURLFlights = '../static/data/data.json';
     const requestFlights = new Request(requestURLFlights);
     const responseFlights = await fetch(requestFlights);
-    const dataFlights = await responseFlights.json();
+    dataFlights = await responseFlights.json();
 
     allCities = dataCities.cities
-    
 
     intializeSelection()
 }

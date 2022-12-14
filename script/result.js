@@ -73,9 +73,18 @@ function createLigne(flight) {
 }
 
 function affResult() {
-    //filtre data avec selection
-    //recupére time, company, nbflight de tout les vols (delay null)
-    //les ajouter dans le tableau result
+    var flights = filterFlights()
+
+    for (let flight of flights) {
+        var result = {
+            dep: "14:15",
+            arr: "17:30",
+            company: "USA AirLines",
+            nbFlight: "91236338",
+            delay: flight.delay_class
+        }
+        listResult.push(result)
+    }
 
     //fait notre programme magique
     //rajouter delay à chaque flight
@@ -84,4 +93,10 @@ function affResult() {
     for (var flight of listResult) {
         listResultDiv.appendChild(createLigne(flight))
     }
+}
+
+function filterFlights() {
+    var dateSelected = selection.date.split("-").map(x=>+x)
+    var flights = dataFlights.filter(flight => (flight.year == dateSelected[0] && flight.month == dateSelected[1] && flight.day == dateSelected[2]))
+    return flights
 }

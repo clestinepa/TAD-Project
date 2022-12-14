@@ -9,8 +9,8 @@ async function getData() {
     const dataCities = await response.json();
 
     allCities = dataCities.cities
-    console.log(allCities)
 
+    intializeSelection()
 }
 
 const resultDiv = document.getElementById("result")

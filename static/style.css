@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+* {
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    --size-grid: 50px;
+    --left-origin: 0px;
+    --bottom-origin: 0px;
+    background-color: #FFFBFA;
+    background-image: url("img/triangles.png"), url("img/lignes.png"), url("img/plus.png");
+    background-repeat: no-repeat;
+    background-size: calc(var(--size-grid)*2), calc(var(--size-grid)*3), calc(var(--size-grid)*3);
+    background-position: bottom right, top right, bottom left;
+    height: 100%;
+    width: 100%;
+    min-width: 900px;
+    min-height: 600px;
+    font-family: "Poppins";
+    font-size: 18px;
+}
+
+body {
+    height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+
+#lottie {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#logo {
+    position: absolute;
+    top: 0;
+    left: min(2vw, 2vh);
+    background-image: url("img/logo.png");
+    background-size:cover;
+    width: calc(var(--size-grid)*2);
+    height: var(--size-grid);
+}
+
+#footer {
+    position: absolute;
+    right: calc(var(--left-origin) + min(2vw, 2vh));
+    bottom: calc(var(--bottom-origin) + min(2vw, 2vh));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #34B7B5;
+    font-size: 12px;
+}
+
+#footer p {
+    text-align:right;
+}
+
+a {
+    color: #34B7B5;
+}
+
+#areaUser {
+    width: 60%;
+    height: 60%;
+    background-color: #FFFBFA;
+    border-radius: 2.5vw;
+    border: 5px solid #005D70;
+    padding: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    color: #222222;
+}
+
+#dateChoice, .time, .flight {
+    font-family: monospace;
+}

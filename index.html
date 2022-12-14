@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Time flies when you’re flying </title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+    <link rel="stylesheet" type="text/css" href="static/selection.css" />
+    <link rel="stylesheet" type="text/css" href="static/result.css" />
+    <link rel="stylesheet" type="text/css" href="static/waitResearch.css" />
+</head>
+
+<body>
+    <div id=logo></div>
+
+    <div id=areaUser>
+        <ul id=selection>
+            <li id=origin>
+                <div class=icon></div>
+                <div class=cityChoice>
+                    <input autocomplete=off role=combobox list="" id=originChoice class=areaChoice name=citys placeholder="Select city">
+                    <datalist class=citysList id=citysOrigin role=listbox></datalist>
+                </div>
+            </li>
+            <li id=dest>
+                <div class=icon></div>
+                <div class=cityChoice>
+                    <input autocomplete=off role=combobox list="" id=destChoice class=areaChoice name=citys placeholder="Select city">
+                    <datalist class=citysList id=citysDest role=listbox></datalist>
+                </div>
+            </li>
+            <li id=date>
+                <!-- <div class=icon></div> -->
+                <input id=dateChoice class=areaChoice name=date type="date" min="2008-01-01" max="2016-12-31">
+            </li>
+            <li id=OK>
+                <div class=areaChoice><span>Research</span></div>
+            </li>
+        </ul>
+        <div id=errorMsg>Please fill in all the fields to start the research</div>
+        <div id=result>
+            <li id=title>
+                <p>Time</p>
+                <p>Company</p>
+                <p>Flight</p>
+                <p>Delay</p>
+            </li>
+            <ul id=listResult>
+                <!-- <li class=notlate>
+                    <p class=time> 09:00 - 12:10</p>
+                    <p class=company>Osijek Airlines</p>
+                    <p class=flight>56302634</p>
+                    <p class=delay><span class=iconDelay></span><span class=valueDelay>no delay</span></p>
+                </li>
+                <li class=late>
+                    <p class=time>14:15 - 17:30</p> 
+                    <p class=company>USA AirLines</p>
+                    <p class=flight>91236338</p>
+                    <p class=delay><span class=iconDelay></span><span class=valueDelay>15-30 min</span></p>
+                </li> -->
+            </ul>
+        </div>
+        <div id=waitResearch>
+            <p>Choose your travel itinerary and a date to see all the available flights...</p>
+        </div>
+    </div>
+
+    <div id=footer>
+        <p><a href="#">About</a></p>
+        <p>©2022-TAD</p>
+        <p>Paillé & Petković</p>
+    </div>
+
+    <!-- <script src="script/bird.js"></scrit> -->
+    <script src="script/bg.js"></script>
+    <script src="script/variables.js"></script>
+    <script src="script/selection.js"></script>
+    <script src="script/result.js"></script>
+</body>
+
+</html>

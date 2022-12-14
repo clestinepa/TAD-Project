@@ -1,0 +1,88 @@
+#result {
+    flex-grow: 1;
+    overflow: hidden;
+}
+#listResult {
+    overflow-y: auto;
+}
+#listResult::-webkit-scrollbar {
+	width: 10px;
+}
+  
+#listResult::-webkit-scrollbar-thumb {
+	background: #00849233;
+	border-radius: 10px;
+}
+  
+#listResult::-webkit-scrollbar-thumb:hover {
+	background: #008492;
+}
+
+#result li, #result p, .delay{
+    display: flex;
+    align-items: center;
+}
+
+#result li p {
+    flex: 1 1 0px;
+}
+
+#result, #listResult, .delay {
+    gap : 0.7vw;
+}
+
+#result, #listResult {
+    display: flex;
+    flex-direction: column;
+}
+
+
+#title  {
+    border-bottom : 1px solid #008492;
+}
+#title p {
+    border-right : 1px solid #008492;
+}
+#title p:last-child {
+    border-right :  1px solid #FFFBFA;
+}
+#title p {
+    padding : 1vh 0.7vw;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+#listResult p {
+    padding : 0 0.7vw;
+}
+
+#listResult .time {
+    gap: 0.3vw;
+}
+
+.flight, .time {
+    justify-content: center;
+}
+
+.late {
+    background-color :rgba(240, 130, 98, 0.2)
+}
+
+.notlate .delay {
+    color: rgba(34, 34, 34, 0.5);
+}
+
+.iconDelay {
+    display: inline-block;
+    background-size:cover;
+    width: max(15px,1.5vw);
+    height: max(15px,1.5vw);
+}
+
+.notlate .iconDelay {background-image: url("img/happy.png");}
+.late .iconDelay {background-image: url("img/sad.png");}
+
+#result {
+    display:none;
+}

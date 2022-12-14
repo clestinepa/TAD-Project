@@ -1,0 +1,15 @@
+#waitResearch {
+    flex-grow: 1;
+    color : #34b7b5;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    padding : 0 10vw;
+}
+
+#errorMsg {
+    font-style: italic;
+    color: #F08262;
+    text-align: center;
+    display : none;
+}

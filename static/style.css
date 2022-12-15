@@ -78,6 +78,8 @@ a {
     flex-direction: column;
     gap: 2vw;
     color: #222222;
+
+    display:none;
 }
 
 #dateChoice, .time, .flight {

@@ -13,26 +13,28 @@ document.getElementById("OK").onclick = function() {
 
         affResult()
     }
-    console.log(originChoice.value, destChoice.value, dateChoice.value)
 }
 
 function affDelay(delay) {
     switch (delay) {
         case 0: return "no delay"
-        case 1: return "0-15 min"
-        case 2: return "15-30 min"
-        case 3: return "30-45 min"
-        case 4: return "45-60 min"
-        case 5: return "60-75 min"
-        case 6: return "75-90 min"
-        case 7: return "90-105 min"
-        case 8: return "105-120 min"
-        case 9: return "120-135 min"
-        case 10: return "135-150 min"
-        case 11: return "150-165 min"
-        case 12: return "165-180 min"
-        case 13: return "+180 min"
+        case 1: return "15-30 min"
+        case 2: return "30-45 min"
+        case 3: return "45-60 min"
+        case 4: return "60-75 min"
+        case 5: return "75-90 min"
+        case 6: return "90-105 min"
+        case 9: return "105-120 min"
+        case 10: return "120-135 min"
+        case 11: return "135-150 min"
+        case 12: return "150-165 min"
+        case 13: return "165-180 min"
+        default: return "+180 min"
     }
+}
+
+function affCompany(code) {
+    return "fuckTAD"
 }
 
 function createLigne(flight) {
@@ -49,7 +51,7 @@ function createLigne(flight) {
     li.appendChild(p)
 
     p = document.createElement("p")
-    p.textContent = flight.company
+    p.textContent = affCompany(flight.company)
     p.classList.add("company")
     li.appendChild(p)
 
@@ -77,10 +79,10 @@ function affResult() {
 
     for (let flight of flights) {
         var result = {
-            dep: "14:15",
-            arr: "17:30",
-            company: "USA AirLines",
-            nbFlight: "91236338",
+            dep: flight.scheduled_departure_dt.substring(11,16),
+            arr: flight.scheduled_arrival_dt.substring(11,16),
+            company: flight.carrier_code,
+            nbFlight: flight.flight_number,
             delay: flight.delay_class
         }
         listResult.push(result)

@@ -1,4 +1,4 @@
-async function intializeSelection() {
+function intializeSelection() {
     initializeAllCities()
     affList()
     addSelectList()

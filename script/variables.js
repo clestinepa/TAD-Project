@@ -1,6 +1,7 @@
 var allCities = []
 var listResult = []
 var dataFlights = []
+var dataAirports = []
 var dataCompanies = []
 
 async function getData() {
@@ -10,17 +11,17 @@ async function getData() {
     const dataCities = await responseCities.json()
     allCities = dataCities.cities
 
-    // const requestURLFlights = '../static/data/data.json'
-    // const requestFlights = new Request(requestURLFlights)
-    // const responseFlights = await fetch(requestFlights)
-    // dataFlights = await responseFlights.json()
-
     const requestURLFlights = '../static/data/dataCROPEDTOWORK.json'
     const requestFlights = new Request(requestURLFlights)
     const responseFlights = await fetch(requestFlights)
     dataFlights = await responseFlights.json()
 
-    const requestURLCompanies = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/airport.json'
+    const requestURLAirports = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/airport.json'
+    const requestAirports = new Request(requestURLAirports)
+    const responseAirports = await fetch(requestAirports)
+    dataAirports = await responseAirports.json()
+
+    const requestURLCompanies = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/company.json'
     const requestCompanies = new Request(requestURLCompanies)
     const responseCompanies = await fetch(requestCompanies)
     dataCompanies = await responseCompanies.json()

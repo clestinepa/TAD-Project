@@ -27,11 +27,13 @@ async function getData() {
     dataCompanies = await responseCompanies.json()
 
     areaUser.style.display = 'flex'
+    wait.style.display = 'none'
 
     intializeSelection()
 }
 
 const areaUser = document.getElementById("areaUser")
+const wait = document.getElementById("wait")
 
 const resultDiv = document.getElementById("result")
 const listResultDiv = document.getElementById("listResult")

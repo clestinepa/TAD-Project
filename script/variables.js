@@ -1,12 +1,14 @@
 var allCities = []
 var listResult = []
-var dataFlights
+var dataFlights = []
+var dataCompanies = []
 
 async function getData() {
     const requestURLCities = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/city.json'
     const requestCities = new Request(requestURLCities)
     const responseCities = await fetch(requestCities)
     const dataCities = await responseCities.json()
+    allCities = dataCities.cities
 
     // const requestURLFlights = '../static/data/data.json'
     // const requestFlights = new Request(requestURLFlights)
@@ -18,8 +20,12 @@ async function getData() {
     const responseFlights = await fetch(requestFlights)
     dataFlights = await responseFlights.json()
 
+    const requestURLCompanies = 'https://raw.githubusercontent.com/clestinepa/TAD-Project/main/static/data/airport.json'
+    const requestCompanies = new Request(requestURLCompanies)
+    const responseCompanies = await fetch(requestCompanies)
+    dataCompanies = await responseCompanies.json()
+
     areaUser.style.display = 'flex'
-    allCities = dataCities.cities
 
     intializeSelection()
 }

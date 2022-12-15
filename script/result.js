@@ -34,7 +34,8 @@ function affDelay(delay) {
 }
 
 function affCompany(code) {
-    return "fuckTAD"
+    const company = dataCompanies.filter(company => company.Code == code)
+    return company[0].Description
 }
 
 function createLigne(flight) {
@@ -87,9 +88,6 @@ function affResult() {
         }
         listResult.push(result)
     }
-
-    //fait notre programme magique
-    //rajouter delay à chaque flight
 
     listResultDiv.replaceChildren()
     for (var flight of listResult) {

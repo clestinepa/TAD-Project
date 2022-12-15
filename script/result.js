@@ -96,21 +96,27 @@ function affResult() {
 }
 
 function filterFlights() {
-    var dateSelected = selection.date.split("-").map(x=>+x)
-    //first date
-    var flights = dataFlights.filter(flight => (flight.year == dateSelected[0] && flight.month == dateSelected[1] && flight.day == dateSelected[2]))
-    
+    var dateSelected = selection.date.split("-").map(x=>+x)    
     var originCodes = getAirportCodeFromCity(selection.origin)
-    var destinationCodes = getAirportCodeFromCity(selection.destination)
+    var destCodes = getAirportCodeFromCity(selection.dest)
 
-    console.log(originCodes, destinationCodes)
+
+    var flights = dataFlights.filter(flight => (flight.year == dateSelected[0]
+                                                && flight.month == dateSelected[1]
+                                                && flight.day == dateSelected[2])
+                                                && originCodes.includes(flight.origin_airport)
+                                                && destCodes.includes(flight.destination_airport))
+
     return flights
 }
 
 function getAirportCodeFromCity(city) {
-    var codes
+    var codes = []
 
-    var airports
+    var airports = dataAirports.filter(airport => airport.Description.includes(city) )
+    for (let airport of airports) {
+        codes.push(airport.Code)
+    }
 
     return codes
 }
